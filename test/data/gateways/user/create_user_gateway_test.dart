@@ -1,6 +1,6 @@
 import 'package:app/data/DTOs/user/create_user_dto.dart';
-import 'package:app/data/gateways/user/create_user_gateway.dart';
-import 'package:app/data/repository/user_repository.dart';
+import 'package:app/infra/gateways/user/create_user_gateway.dart';
+import 'package:app/data/repositories/user_repository.dart';
 import 'package:test/test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
