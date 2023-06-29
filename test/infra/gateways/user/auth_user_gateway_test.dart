@@ -28,7 +28,7 @@ void main(){
       expect(sut.auth(data), throwsException);
     });
 
-    test('Auth user: error', () async {
+    test('Auth user: success', () async {
       AuthUserRepositoryStub repository = AuthUserRepositoryStub();
       AuthUserGateway sut = AuthUserGateway(repository);
       AuthUserDTO data = AuthUserDTO(email: 'email@test', password: 'password_test');
