@@ -12,6 +12,8 @@ flutter test
 
 # Project
 
+![Texto Alternativo](readme_assets/1.jpg)
+
 ## Architecture chosen for the project:
 
 - ```Clean Architeture```
