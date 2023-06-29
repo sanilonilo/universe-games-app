@@ -1,3 +1,3 @@
-abstract class CreateUserUseCase{
-  Future<Object> create(Object dto);
+abstract class CreateUserUseCase<DTO>{
+  Future<void> create(dynamic dto);
 }
