@@ -1,5 +1,10 @@
 # Commands
 
+## Install libs
+```shell
+flutter pub get
+```
+
 ## Run test
 ```shell
 flutter test
