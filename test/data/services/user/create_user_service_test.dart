@@ -1,12 +1,12 @@
 import 'package:app/data/DTOs/user/create_user_dto.dart';
-import 'package:app/infra/gateways/user/create_user_gateway.dart';
+import 'package:app/data/services/user/create_user_service.dart';
 import 'package:app/data/repositories/user_repository.dart';
 import 'package:test/test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
 
-@GenerateNiceMocks([MockSpec<CreateUserGateway>()])
-import '../user/create_user_gateway_test.mocks.dart';
+@GenerateNiceMocks([MockSpec<CreateUserService>()])
+import '../user/create_user_service_test.mocks.dart';
 
 class RepositoryStub extends Fake implements CreateUserRepository{
   @override
@@ -16,9 +16,9 @@ class RepositoryStub extends Fake implements CreateUserRepository{
 }
 
 void main(){
-  group("Create user gateway", (){
+  group("Create user service", (){
     test("Create user : error",() async {
-      MockCreateUserGateway sut = MockCreateUserGateway();
+      MockCreateUserService sut = MockCreateUserService();
       CreateUserDTO data = CreateUserDTO(name: 'name_test',email: 'email@test',password: 'password_test',confirmPassword: 'confirm_password_test');
       when(sut.create(data)).thenAnswer((realInvocation) => Future.error(Exception()));
       
@@ -28,7 +28,7 @@ void main(){
 
     test("Create user : success",() async {
       RepositoryStub repository = RepositoryStub();
-      CreateUserGateway sut = CreateUserGateway(repository);
+      CreateUserService sut = CreateUserService(repository);
       CreateUserDTO data = CreateUserDTO(name: 'name_test',email: 'email@test',password: 'password_test',confirmPassword: 'confirm_password_test');
       await sut.create(data);
     });
