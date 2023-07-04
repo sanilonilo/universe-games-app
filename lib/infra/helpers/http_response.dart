@@ -1,7 +1,7 @@
 class HttpResponse{
   int status;
-  dynamic? body;
-  dynamic? message;
+  dynamic body;
+  dynamic message;
 
   HttpResponse({
     required this.status,
