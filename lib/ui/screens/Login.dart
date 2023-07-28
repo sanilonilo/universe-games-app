@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app/ui/components/form/form_login.dart';
 
 class Login extends StatelessWidget{
   @override
@@ -14,8 +15,9 @@ class Login extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                child: Image.asset('assets/images/logo-login.png',width: 120),
-              )
+                child: Image.asset('assets/images/logo-login.png',width: 90),
+              ),
+              FormLogin()
             ],
           ),
         ),
