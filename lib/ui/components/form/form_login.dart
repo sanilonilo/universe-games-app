@@ -38,6 +38,7 @@ class _FormLoginState extends State<FormLogin> {
             Input(
               label: "Email",
               field: "email",
+              icon: Icons.email,
               secure: false,
               focusNode: null,
               action: TextInputAction.next,
@@ -48,6 +49,7 @@ class _FormLoginState extends State<FormLogin> {
             Input(
               label: "Password",
               field: "password",
+              icon: Icons.lock,
               secure: true,
               focusNode: _focusPassword,
               action: TextInputAction.send,

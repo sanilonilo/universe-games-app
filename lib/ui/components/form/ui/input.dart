@@ -7,6 +7,7 @@ typedef dynamic Validate(String field,String? value);
 class Input extends StatelessWidget{
   final String label;
   final String field; 
+  final IconData? icon;
   final bool secure;
   final TextInputAction? action;
   final FocusNode? focusNode;
@@ -17,10 +18,21 @@ class Input extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Container(
+      margin: EdgeInsets.only(bottom: 10),
       child: TextFormField(
         focusNode: focusNode,
         textCapitalization: TextCapitalization.none,
-        decoration: InputDecoration(labelText: label),
+        decoration: InputDecoration(
+          labelText: label,
+          prefixIcon: icon != null ? Icon(icon,size: 20,color: Colors.white,) : null,
+          suffixIcon: secure ? GestureDetector(
+            child: Icon(Icons.remove_red_eye,color: Colors.white38,size: 20,),
+            onTap: (){
+              print("Toggle");
+            },
+          ) : null
+        ),
+        style: TextStyle(fontSize: 14),
         textInputAction: action ?? TextInputAction.send,
         onFieldSubmitted: (_){
           if(onSubmitted != null) onSubmitted!();
@@ -41,6 +53,7 @@ class Input extends StatelessWidget{
   Input({
     required this.field,
     required this.label,
+    this.icon,
     required this.secure,
     this.focusNode,
     this.onSubmitted,
