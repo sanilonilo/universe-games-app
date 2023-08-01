@@ -18,7 +18,7 @@ class Input extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Container(
-      margin: EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.only(bottom: 20),
       child: TextFormField(
         focusNode: focusNode,
         textCapitalization: TextCapitalization.none,
@@ -32,7 +32,7 @@ class Input extends StatelessWidget{
             },
           ) : null
         ),
-        style: TextStyle(fontSize: 14),
+        style: const TextStyle(fontSize: 14),
         textInputAction: action ?? TextInputAction.send,
         onFieldSubmitted: (_){
           if(onSubmitted != null) onSubmitted!();

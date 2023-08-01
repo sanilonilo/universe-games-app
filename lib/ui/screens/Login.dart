@@ -1,27 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:app/ui/components/form/form_login.dart';
 
-class Login extends StatelessWidget{
+class Login extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(20),
+        body: SingleChildScrollView(
+      child: Container(
           width: double.infinity,
           height: MediaQuery.of(context).size.height,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Stack(
             children: [
               Container(
-                child: Image.asset('assets/images/logo-login.png',width: 90),
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height / 1.8,
+                child: Image.asset('assets/images/bg-login.jpg',
+                    fit: BoxFit.cover),    
               ),
-              FormLogin()
+              Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height / 1.8,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                    colors: [Colors.black,Colors.black12,Colors.black26]
+                  )
+                ), 
+              ),
+              Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height / 1.8,
+                child: Center(
+                  child: Image.asset('assets/images/logo-white.png',width: 60,),
+                ),
+              ),
+              Positioned(
+                width: MediaQuery.of(context).size.width,
+                
+                left: 0,
+                bottom: 0,
+                child: FormLogin(),
+              )
             ],
-          ),
-        ),
-      )
-    );
+          )),
+    ));
   }
 }
