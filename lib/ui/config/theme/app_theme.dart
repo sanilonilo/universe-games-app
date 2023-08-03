@@ -10,7 +10,7 @@ class AppTheme{
           secondary: Colors.white,
       ),
       textTheme: textTheme(),
-      scaffoldBackgroundColor: Colors.black26,
+      scaffoldBackgroundColor: const Color.fromARGB(255, 27, 27, 27),
       inputDecorationTheme: inputTheme()
     );
   }

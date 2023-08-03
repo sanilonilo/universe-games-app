@@ -6,44 +6,38 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
       child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 15),
           width: double.infinity,
-          height: MediaQuery.of(context).size.height,
-          child: Stack(
+          
+          child: Column(
             children: [
               Container(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height / 1.8,
-                child: Image.asset('assets/images/bg-login.jpg',
-                    fit: BoxFit.cover),    
-              ),
-              Container(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height / 1.8,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                    colors: [Colors.black,Colors.black12,Colors.black26]
-                  )
-                ), 
-              ),
-              Container(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height / 1.8,
-                child: Center(
-                  child: Image.asset('assets/images/logo-white.png',width: 60,),
+                padding: const EdgeInsets.only(top: 25,bottom: 40),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Image.asset('assets/images/logo-white.png',width: 30,),
+                  ],
                 ),
               ),
-              Positioned(
-                width: MediaQuery.of(context).size.width,
-                
-                left: 0,
-                bottom: 0,
+              Container(
+                padding: const EdgeInsets.only(bottom: 40),
+                width: double.infinity,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Hello.',style: TextStyle(fontSize: 35,color: Colors.white),),
+                    Text('Welcome back.',style: TextStyle(fontSize: 35,color: Colors.white),)
+                  ],
+                ),
+              ),
+              Container(
                 child: FormLogin(),
               )
             ],
-          )),
-    ));
+          )
+    )));
   }
 }
